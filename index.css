@@ -28,6 +28,8 @@ body {}
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+
+
 }
 
 img,
@@ -815,6 +817,8 @@ p {
   padding: var(--spacing-64) 0;
 
   position: relative;
+
+  background-color: #f80de5;
 
 }
 
