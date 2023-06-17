@@ -589,15 +589,13 @@ p {
 
 
 
-
-
 .hero-section {
 
   width: 100%;
 
   position: relative;
 
-  background: var(--my-white);
+  /* background: var(--my-white); */
 
   padding: var(--spacing-64) 0;
 
@@ -946,6 +944,9 @@ p {
 /*---------------------------------------------- ZOHO ONE SECTION ------------------------------------------------------- */
 
 
+
+
+
 .zoho-one-section {
 
   width: 100%;
@@ -962,41 +963,27 @@ p {
 
 
 
-/* BACKGROUND FULL WIDTH COLOR */
+#gradient-canvas {
 
-.zoho-one-section::before {
 
   position: absolute;
 
-  top: 0;
-
-  content: "";
-
-  width: 100vw;
+  width: 100%;
   height: 100%;
-
-
   z-index: -1;
 
-  animation: animateBg 5s linear infinite;
-  background-image: linear-gradient(90deg, #fef486, #f8d00d, #ffb10a, #f8d00d, #fef486, #f8d00d);
-  background-size: 500% 100%;
+  top: 0;
+  left: 0;
+
+
+--gradient-color-1: #d83c3c;
+--gradient-color-2: #5757d6;
+--gradient-color-3: #e65be6;
+--gradient-color-4: #ffff00;
+
+
+
 }
-
-@keyframes animateBg {
-  0% {
-    background-position: 0% 0%;
-  }
-
-  100% {
-    background-position: 100% 0%;
-  }
-}
-
-
-
-
-
 
 
 
