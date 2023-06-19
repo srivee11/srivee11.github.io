@@ -8,7 +8,7 @@
   /* ``My_border */
 
   /* background-color: rgba(129, 129, 129, 0.1) !important; */
-  border: 1pt solid rgba(255, 0, 0, 0.493) !important;
+  /* border: 1pt solid rgba(255, 0, 0, 0.493) !important; */
 
 }
 
@@ -167,29 +167,14 @@ h1 {
 }
 
 
-/*------ DON'T USE ------ */
-
-h2 {
-  font-family: var(--heading-font);
-  font-weight: 400;
-  font-size: clamp(1rem, 2vw + 1.5rem, 2rem);
-  line-height: 48px;
-  margin: 0;
-  width: 100%;
-  color: var(--gray9);
-
-}
-
-
-
 
 
 
 h3 {
   font-family: var(--heading-font);
   font-weight: 500;
-  font-size: 32px;
-  line-height: 40px;
+  font-size: clamp(1rem, 2vw + 1.5rem, 2rem);
+  line-height: 2rem;
   margin: 0;
   width: 100%;
   color: var(--gray9);
@@ -198,8 +183,8 @@ h3 {
 h4 {
   font-family: var(--body-font);
   font-weight: 700;
-  font-size: 24px;
-  line-height: 32px;
+  font-size: calc(24rem / 16);
+  line-height: 2rem;
   margin: 0;
   width: 100%;
   letter-spacing: 0.25px;
@@ -210,8 +195,8 @@ h4 {
 h5 {
   font-family: var(--body-font);
   font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 1rem;
+  line-height: 1.5rem;
   margin: 0;
   width: 100%;
   color: var(--gray7);
@@ -220,8 +205,8 @@ h5 {
 h6 {
   font-family: var(--body-font);
   font-weight: 400;
-  font-size: 14px;
-  line-height: 16px;
+  font-size: calc(14rem / 16);
+  line-height: 1rem;
   margin: 0;
   width: 100%;
   color: var(--gray7);
@@ -240,8 +225,8 @@ a:hover {
 }
 
 p {
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 1rem;
+  line-height: 1.5rem;
   font-weight: 500;
   margin: var(--spacing-16) 0;
   color: var(--gray7);
@@ -312,16 +297,11 @@ p {
 
 .primary-button {
   font-family: var(--body-font);
-
+  font-size: 16px;
+  letter-spacing: 1.25px;
   font-weight: 500;
   border-radius: 4px;
   border: none;
-
-
-  font-size: 1rem;
-  width: 14rem;
-  max-width: 100%;
-
 
   text-transform: capitalize;
 
@@ -351,14 +331,8 @@ p {
 
 .secondary-button {
   font-family: var(--body-font);
+  font-size: 16px;
   letter-spacing: 1.25px;
-
-
-  font-size: 1rem;
-  width: 14rem;
-  max-width: 100%;
-
-
   font-weight: 500;
   border-radius: 4px;
   border: 2pt solid var(--cta-blue);
@@ -659,8 +633,8 @@ p {
 .hero-section .button-container {
 
   margin-top: var(--spacing-32);
-  width: 100%;
-
+  max-width: 80%;
+  gap: 1rem;
 }
 
 
@@ -994,7 +968,7 @@ p {
   --gradient-color-3: #fbe204;
   --gradient-color-4: #4073FF;
 
-
+  border-radius: 16px;
 
 }
 
@@ -1938,18 +1912,22 @@ blockquote::after {
 
   width: 100%;
 
-  display: flex;
 
-  gap: 0.5rem;
-
-  flex-direction: row;
-  justify-content: center;
   align-items: start;
-  text-align: left;
+  justify-content: center;
 
   flex-wrap: wrap;
 
-  font-size: clamp(1.5rem, 2vw + 1.5rem, 3rem);
+  display: grid;
+
+
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+  grid-auto-rows: minmax(200px, auto);
+
+  gap: var(--spacing-8);
+
+  padding: var(--spacing-32) 0 var(--spacing-32) 0;
 
 
 }
@@ -1961,27 +1939,10 @@ blockquote::after {
 }
 
 
-.footer-section::before {
-
-  position: absolute;
-
-  content: "";
-  top: 0;
-
-  width: 100vw;
-  height: 100%;
-
-
-  z-index: -1;
-
-
-  background-color: #CCDDDE;
-
-}
 
 
 
-.footer-section h4 {
+.footer-section>h4 {
 
 
   font-family: var(--body-font);
@@ -2005,19 +1966,10 @@ blockquote::after {
 }
 
 
-.footer-section h4 {
-
-  color: var(--gray7);
-
-  font-weight: 500;
-
-}
-
 
 .footer-section .col {
 
 
-  width: 20%;
   flex-direction: column;
   justify-content: start;
   align-items: center;
@@ -2035,7 +1987,8 @@ blockquote::after {
 
 .col li {
   margin: var(--spacing-8) 0;
-  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5rem;
   font-weight: 500;
 }
 
@@ -2076,7 +2029,6 @@ blockquote::after {
 
 
 
-
   /* GENERAL LAYOUT */
 
 
@@ -2089,9 +2041,133 @@ blockquote::after {
 
 
 
+  .hero-section {
+
+    padding: var(--spacing-16) var(--spacing-24);
+
+  }
+
+  .footer-section {
+
+    padding: var(--spacing-32);
+
+  }
 
 
 
+
+
+}
+
+
+
+/* 900 PX BREAKPOINT */
+
+@media only screen and (max-width: 900px) {
+  :root {
+
+    --spacing-64: 40px;
+
+  }
+
+
+  /* cut and paste rules  */
+
+  .navbar {
+
+    padding: var(--spacing-8) var(--spacing-16);
+
+  }
+
+
+  .navbar-container .navbar-button {
+
+    display: none;
+
+  }
+
+  main {
+    width: 100%;
+    margin: var(--spacing-64) 0 0 0;
+  }
+
+
+
+  .hero-section {
+
+    padding: var(--spacing-16) var(--spacing-24);
+
+  }
+
+  .footer-section {
+
+    padding: var(--spacing-32);
+
+  }
+
+
+
+  .hero-section .col-left {
+
+    width: 60%;
+
+
+  }
+
+  .hero-section .col-right {
+
+    width: 40%;
+
+
+  }
+
+
+  /* GENERAL LAYOUT */
+
+
+
+  .navbar .menu {
+
+    display: flex;
+
+  }
+
+
+  .hero-section .img-container {
+
+    min-height: 250px;
+
+  }
+
+  .hero-section .hero-img {
+
+    min-height: 200px;
+
+  }
+
+
+
+
+  .hero-section .hero-title {
+
+    padding: var(--spacing-32);
+
+  }
+
+
+  .hero-section .button-container {
+
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 60%;
+
+  }
+
+  .footer-section {
+
+    padding: var(--spacing-16);
+
+  }
 
 
 
@@ -2104,24 +2180,32 @@ blockquote::after {
 
 
 
+/* 700px LAYOUT */
 
-/* TABLET LAYOUT */
+@media only screen and (max-width: 800px) {
 
-/* CUSTOM BREAKPOINT (700px) */
-@media only screen and (max-width: 700px) {
-  :root {}
+  :root {
+
+    --spacing-64: 32px;
+    --spacing-32: 24px;
+
+  }
 
 
   main {
 
     width: 100%;
-    margin: var(--spacing-32) 0;
-    padding: 0 var(--spacing-32);
-
-
+    margin: var(--spacing-32) 0 0 0;
   }
 
 
+  /* HIDING AND HIDING EXTRA NAV DROPDOWN MENUS ON RIGHT  */
+
+  .navbar-container .navbar-button {
+
+    display: flex;
+
+  }
 
 
 
@@ -2171,11 +2255,19 @@ blockquote::after {
 
     display: flex;
     justify-content: center;
+    max-width: 80%;
 
   }
 
 
+  .zoho-one-section .main-container {
 
+    border: none;
+    background: none;
+    box-shadow: none;
+
+
+  }
 
 
 
@@ -2188,14 +2280,15 @@ blockquote::after {
 
   .two-column>.col-left {
     width: 100%;
-    padding: 0;
+    padding: 0 var(--spacing-32) 0 var(--spacing-32);
     align-items: center;
     text-align: center;
+
   }
 
   .two-column>.col-right {
     width: 100%;
-    padding: 0;
+    padding: 0 var(--spacing-32) 0 var(--spacing-32);
     align-items: center;
     text-align: center;
   }
@@ -2207,11 +2300,16 @@ blockquote::after {
   }
 
 
+  .card-bottom>.title-designation {
+    width: 100%;
+    padding: 0 var(--spacing-8) 0 var(--spacing-8);
+    align-items: start;
+    text-align: left;
+  }
 
 
 
-
-  /* TABLET HERO SECTION  */
+  /* HERO SECTION  */
 
 
   .hamburger {
@@ -2241,6 +2339,7 @@ blockquote::after {
 
 
   .mobile-navbar {
+
     background-color: var(--my-white);
     width: 100vw;
     position: fixed;
@@ -2323,14 +2422,594 @@ blockquote::after {
   .hero-section .button-container {
 
     flex-direction: column;
-
-  }
-
-  .hero-section .button-container button {
-
-    margin: var(--spacing-8);
+    max-width: 60%;
+    gap: 1rem;
 
 
   }
+
+  .testimonials-section .button-container {
+
+    flex-direction: column;
+    max-width: 60%;
+
+    gap: 1rem;
+
+  }
+
+  .values-section .button-container {
+
+    flex-direction: column;
+    max-width: 60%;
+
+    gap: 1rem;
+
+  }
+
+  .footer-section {
+
+    padding: var(--spacing-16);
+
+  }
+
+}
+
+
+
+
+/* -----------------------360px LAYOUT------------------------------------------------------------------------------------- */
+
+@media only screen and (max-width: 500px) {
+
+
+
+  html,
+  body {
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+
+
+  }
+
+  body {
+    font-family: var(--body-font);
+    color: var(--gray9);
+    margin: 0;
+    box-sizing: border-box;
+    padding: var(--spacing-8) 0 0 0;
+    background-color: var(--my-white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  :root {
+
+    --spacing-64: 32px;
+    --spacing-32: 24px;
+
+  }
+
+  .navbar {
+
+    padding: 0 var(--spacing-16);
+
+  }
+
+  .navbar-container .navbar-button {
+
+    display: flex;
+
+  }
+
+
+
+
+  main {
+    width: 100%;
+    margin: var(--spacing-16) 0 0 0;
+  }
+
+
+
+
+  h1 {
+    font-family: var(--heading-font);
+    font-weight: 700;
+    font-size: calc(32rem/16);
+    line-height: 2rem;
+    margin: 0;
+    width: 100%;
+    letter-spacing: -1px;
+    color: var(--gray9);
+  }
+
+
+
+
+
+  h3 {
+    font-family: var(--heading-font);
+    font-weight: 500;
+    font-size: calc(24rem / 16);
+    line-height: 2rem;
+    margin: 0;
+    width: 100%;
+    color: var(--gray9);
+  }
+
+  h4 {
+    font-family: var(--body-font);
+    font-weight: 700;
+    font-size: calc(20rem / 16);
+    line-height: calc(28rem / 16);
+    margin: 0;
+    width: 100%;
+    letter-spacing: 0.25px;
+    color: var(--gray9);
+
+  }
+
+  h5 {
+    font-family: var(--body-font);
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin: 0;
+    width: 100%;
+    color: var(--gray7);
+  }
+
+  h6 {
+    font-family: var(--body-font);
+    font-weight: 400;
+    font-size: calc(14rem / 16);
+    line-height: 1rem;
+    margin: 0;
+    width: 100%;
+    color: var(--gray7);
+
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 400;
+    transition: color 0.25s ease;
+  }
+
+  a:hover {
+    color: var(--cta-blue);
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+    margin: var(--spacing-16) 0;
+    color: var(--gray7);
+  }
+
+
+  .navbar .zoho-logo {
+    max-height: 40px;
+  }
+
+  .hero-section H1 {
+
+    text-align: left;
+  }
+
+  .hero-section H4 {
+
+    text-align: left;
+  }
+
+
+  .hero-section .img-container {
+    max-height: 200px;
+  }
+
+  .hero-section .hero-img {
+    max-height: 150px;
+  }
+
+
+
+
+  .values-section .value-card-container {
+
+
+
+    max-width: 100%;
+
+    align-items: start;
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    display: grid;
+
+
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+    grid-auto-rows: minmax(250px, auto);
+
+    gap: var(--spacing-8);
+
+
+
+
+  }
+
+  .value-card h4 {
+
+
+
+    font-family: var(--body-font);
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    margin: 0;
+    width: 100%;
+    color: var(--gray9);
+
+  }
+
+
+
+  .visions-section .button-container {
+
+    display: flex;
+    justify-content: center;
+
+  }
+
+
+  .zoho-one-section .main-container {
+
+    border: none;
+    background: none;
+
+
+
+  }
+
+
+
+
+
+  .two-column {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .two-column>.col-left {
+    width: 100%;
+    padding: 0 var(--spacing-32) 0 var(--spacing-32);
+    align-items: center;
+    text-align: center;
+
+  }
+
+  .two-column>.col-right {
+    width: 100%;
+    padding: 0 var(--spacing-32) 0 var(--spacing-32);
+    align-items: center;
+    text-align: center;
+  }
+
+  .visions-section .text-section {
+
+    order: 2;
+
+  }
+
+
+  .card-bottom>.title-designation {
+    width: 100%;
+    padding: 0 var(--spacing-8) 0 var(--spacing-8);
+    align-items: start;
+    text-align: left;
+  }
+
+
+
+  /* HERO SECTION  */
+
+
+  .hamburger {
+
+
+    min-height: 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+  }
+
+  .hamburger .fa-solid {
+
+    scale: 1.3;
+
+  }
+
+  .navbar .menu {
+
+    display: none;
+
+  }
+
+
+
+  .mobile-navbar {
+
+    background-color: var(--my-white);
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    z-index: -2;
+
+    padding-top: 100px;
+
+    transition: transform 1s ease-out;
+
+
+
+    border-bottom: solid 1px var(--gray3);
+
+  }
+
+  .mobile-navbar a {
+
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+
+    padding: var(--spacing-16) var(--spacing-64);
+
+
+    color: var(--gray9);
+
+  }
+
+  .mobile-navbar h5 {
+
+    color: var(--gray9);
+    font-weight: 500;
+
+
+  }
+
+
+  .mobile-navbar a:hover {
+
+    color: var(--cta-blue);
+    text-decoration: none;
+
+  }
+
+
+  .mobile-navbar a:hover h5 {
+
+    color: var(--cta-blue);
+
+  }
+
+
+  .hero-section .hero-title {
+
+    order: 2;
+
+  }
+
+  .hero-section .img-container {
+
+    max-height: 300px;
+    transform: translate(0px, var(--spacing-32));
+
+  }
+
+  .hero-section .hero-img {
+
+    max-height: 250px;
+
+  }
+
+  .hero-section .hero-title {
+
+    padding: 0;
+
+
+  }
+
+  .hero-section {
+
+    margin-bottom: var(--spacing-32);
+
+  }
+
+  .hero-section .button-container {
+
+    flex-direction: column;
+    max-width: 100%;
+    gap: 1rem;
+
+
+  }
+
+ .featured-apps-section .product-card {
+
+    padding: 0 var(--spacing-64);
+
+    min-height: 250px;
+
+ }
+
+  .featured-apps-section .product-card img {
+    max-height: 72px;
+}
+
+
+  .zoho-one-section .main-container {
+
+    max-width: 100%;
+    padding: 0;
+  }
+
+
+  .zoho-one-section .zoho-one-img {
+    max-height: 100px;
+    height: 100%;
+  }
+
+  .prakash-card .prakash-img {
+    
+    max-height: 72px; }
+
+  .card-container .zoho-one-card {
+
+    width: 100%;
+
+  }
+
+  .testimonials-section {
+
+    padding: var(--spacing-32);
+
+  }
+
+
+  .testimonials-section .main-clipper {
+
+    width: 100%;
+
+  }
+
+  .testimonials-section .button-container {
+
+    flex-direction: column;
+    max-width: 80%;
+
+    gap: 1rem;
+
+  }
+
+  .zoho-for-enterprises {
+
+    padding: 0;
+
+
+  }
+
+
+
+  .zoho-for-enterprises .col-left {
+
+    order: 2;
+
+  }
+
+
+  .zoho-for-enterprises .thomas-img {
+  
+    max-height: 72px; 
+  }
+
+  .zoho-for-enterprises .text-container {
+
+    margin-top: var(--spacing-32);
+
+  }
+
+
+  .zoho-for-enterprises::after {
+    position: absolute;
+    content: "";
+    background: none;
+    width: 100%;
+    height: 200px;
+    bottom: 0%;
+    right: -85%;
+    z-index: -1; }
+
+  .zoho-for-enterprises .button-container {
+
+    margin-bottom: var(--spacing-32);
+
+  }
+
+  .zoho-for-enterprises .thomas-card {
+
+    padding: var(--spacing-8);
+
+  }
+
+  .zoho-for-enterprises .text-container {
+
+    padding: var(--spacing-8) var(--spacing-32);
+    text-align: left;
+
+  }
+
+
+
+  .zoholics-img-container {
+
+    width: 95%;
+
+  }
+
+
+  .values-section .value-card {
+
+    align-items: center;
+
+  }
+
+  .values-section .button-container {
+
+    flex-direction: column;
+    max-width: 80%;
+
+    gap: 1rem;
+
+  }
+
+
+  .visions-section h5 {
+
+    text-align: left;
+
+  }
+
+  .footer-section>h4 {
+    font-size: calc(16rem/16);
+    line-height: 1.5rem;
+    font-weight: 400;
+
+  }
+
+
+
+  .col li {
+    margin: var(--spacing-8) 0;
+    font-size: calc(14rem/16);
+    line-height: 1.5rem;
+    font-weight: 700;
+  }
+
+
 
 }
