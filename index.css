@@ -678,17 +678,17 @@ p {
 @keyframes float {
   0% {
 
-    transform: translatey(0px);
+    transform: translateY(0px);
   }
 
   50% {
 
-    transform: translatey(-20px);
+    transform: translateY(-20px);
   }
 
   100% {
 
-    transform: translatey(0px);
+    transform: translateY(0px);
   }
 }
 
@@ -1292,11 +1292,12 @@ blockquote::after {
 
 @keyframes primary {
   from {
-    left: 0%;
+    transform: translateX(0%);
   }
 
   to {
-    left: -100%;
+    transform: translateX(-100%);
+
   }
 }
 
