@@ -661,12 +661,6 @@ p {
   position: absolute;
 
 
-  /* 
-  top: calc(50% - 150px);
-  left: calc(50% - 150px);
- */
-
-  /* transform: translate( var(--spacing-64), -0px); */
 
   animation: float 6s ease-in-out infinite;
 
@@ -677,18 +671,18 @@ p {
 
 @keyframes float {
   0% {
-
-    transform: translateY(0px);
+    
+    transform: translateY(0%);
   }
 
   50% {
 
-    transform: translateY(-20px);
+    transform: translateY(-10%);
   }
 
   100% {
 
-    transform: translateY(0px);
+    transform: translateY(0%);
   }
 }
 
