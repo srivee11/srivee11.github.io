@@ -8,7 +8,7 @@
   /* ``My_styles*/
 
   /* background-color: rgba(129, 129, 129, 0.1) !important; */
-  /* border: 1pt solid rgba(255, 0, 0, 0.493) !important; */
+  border: 1pt solid rgba(255, 0, 0, 0.493) !important;
 
 }
 
@@ -1254,9 +1254,9 @@ blockquote::after {
 
 
 .scroll-parent-one {
-  height: 128px;
-  width: 1563px;
 
+  width: 100%;
+  aspect-ratio: calc(1563/ 128);
 
   z-index: -2;
 
@@ -1269,8 +1269,8 @@ blockquote::after {
 }
 
 .scroll-element-one {
-  height: 128px;
-  width: 1563px;
+  width: 100%;
+    aspect-ratio: calc(1563/ 128);
   background: url(assets/testimonial_strip1.png);
   position: absolute;
   top: 0%;
@@ -1318,6 +1318,9 @@ blockquote::after {
 
 
 /* ----------------------SCROLL ELEMENT 2------------------ */
+
+
+/* 
 
 .scroll-parent-two {
   height: 128px;
@@ -1382,7 +1385,7 @@ blockquote::after {
   }
 }
 
-
+ */
 
 
 
@@ -2849,17 +2852,17 @@ blockquote::after {
 
   }
 
- .featured-apps-section .product-card {
+  .featured-apps-section .product-card {
 
     padding: 0 var(--spacing-64);
 
     min-height: 250px;
 
- }
+  }
 
   .featured-apps-section .product-card img {
     max-height: 72px;
-}
+  }
 
 
   .zoho-one-section .main-container {
@@ -2875,8 +2878,9 @@ blockquote::after {
   }
 
   .prakash-card .prakash-img {
-    
-    max-height: 72px; }
+
+    max-height: 72px;
+  }
 
   .card-container .zoho-one-card {
 
@@ -2923,8 +2927,8 @@ blockquote::after {
 
 
   .zoho-for-enterprises .thomas-img {
-  
-    max-height: 72px; 
+
+    max-height: 72px;
   }
 
   .zoho-for-enterprises .text-container {
@@ -2942,7 +2946,8 @@ blockquote::after {
     height: 200px;
     bottom: 0%;
     right: -85%;
-    z-index: -1; }
+    z-index: -1;
+  }
 
   .zoho-for-enterprises .button-container {
 
