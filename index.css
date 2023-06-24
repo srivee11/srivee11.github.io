@@ -8,7 +8,7 @@
   /* ``My_styles*/
 
   /* background-color: rgba(129, 129, 129, 0.1) !important; */
-  border: 1pt solid rgba(255, 0, 0, 0.493) !important;
+  /* border: 1pt solid rgba(255, 0, 0, 0.493) !important; */
 
 }
 
@@ -1255,8 +1255,9 @@ blockquote::after {
 
 .scroll-parent-one {
 
-  width: 100%;
-  aspect-ratio: calc(1563/ 128);
+  width: 1638px;
+  height: 128px;
+  
 
   z-index: -2;
 
@@ -1269,8 +1270,8 @@ blockquote::after {
 }
 
 .scroll-element-one {
-  width: 100%;
-    aspect-ratio: calc(1563/ 128);
+  width: 1638px;
+  height: 128px;
   background: url(assets/testimonial_strip1.png);
   position: absolute;
   top: 0%;
@@ -1320,7 +1321,7 @@ blockquote::after {
 /* ----------------------SCROLL ELEMENT 2------------------ */
 
 
-/* 
+
 
 .scroll-parent-two {
   height: 128px;
@@ -1385,7 +1386,7 @@ blockquote::after {
   }
 }
 
- */
+ 
 
 
 
